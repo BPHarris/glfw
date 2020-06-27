@@ -38,9 +38,8 @@ project "GLFW"
             "src/posix_thread.c",
             "src/nsgl_context.c",
             "src/egl_context.c",
-            "src/osmesa_context.c"
-            "src/cocoa_joystick.c",
-            
+            "src/osmesa_context.c",
+            "src/cocoa_joystick.c"
         }
 
         defines
