@@ -24,8 +24,29 @@ project "GLFW"
 	}
 
 
-	-- TODO: OSX system filter
+    -- TODO: Test OSX system filter
+    filter "system:osx"
+        systemversion "latest"
+        staticruntime "On"
 
+        files
+        {
+            "src/cocoa_init.c",
+            "src/cocoa_monitor.c",
+            "src/cocoa_window.c",
+            "src/cocoa_time.c",
+            "src/posix_thread.c",
+            "src/nsgl_context.c",
+            "src/egl_context.c",
+            "src/osmesa_context.c"
+            "src/cocoa_joystick.c",
+            
+        }
+
+        defines
+        {
+            "_GLFW_COCOA"
+        }
 
 	filter "system:linux"
 		pic "On"
@@ -78,8 +99,8 @@ project "GLFW"
 	
 	filter "configurations:Debug"
 		runtime "Debug"
-		symbols "on"
+		symbols "On"
 
 	filter "configurations:Release"
 		runtime "Release"
-		optimize "on"
+		optimize "On"
