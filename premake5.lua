@@ -24,8 +24,8 @@ project "GLFW"
 	}
 
 
-    -- TODO: Test OSX system filter
-    filter "system:osx"
+    -- TODO: Test macosx system filter
+    filter "system:macosx"
         systemversion "latest"
         staticruntime "On"
 
