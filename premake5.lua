@@ -1,10 +1,15 @@
+-- GLFW premake project for SkeletonEngine
 project "GLFW"
 	kind "StaticLib"
 	language "C"
 
+
+	-- Project-wide bin/bin-int directories (from SkeletonEngine/premake5.lua)
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+
+	-- GLFW files
 	files
 	{
 		"include/GLFW/glfw3.h",
@@ -17,6 +22,11 @@ project "GLFW"
 		"src/vulkan.c",
 		"src/window.c"
 	}
+
+
+	-- TODO: OSX system filter
+
+
 	filter "system:linux"
 		pic "On"
 
@@ -64,7 +74,8 @@ project "GLFW"
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
-
+	
+	
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
